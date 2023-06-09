@@ -1,0 +1,12 @@
+<%- include('partials/header'); -%>
+<h2 class="text-center text-muted display-5 pt-3"><%= homeContent %></h2>
+<% for(let i = recentRecipes.length - 1; i >= 0 && i > recentRecipes.length - 4; i--) {%>
+    <div class="d-flex justify-content-center flex-column align-items-center">
+        <h2 class="title text-center"><%= recentRecipes[i] %></h2>
+        <div class="text-center">
+            <p><%= allRecipes[recentRecipes[i]].slice(0,100) %>...<a href="/recipe/<%= recentRecipes[i] %>">read more</a></p>
+        </div>
+    </div>
+          
+<% } %>
+<%- include('partials/footer'); -%>

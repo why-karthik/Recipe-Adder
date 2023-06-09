@@ -1,0 +1,13 @@
+
+<%- include('partials/header') %>
+<h2 class="text-center text-muted display-4"><%= allRecipeContent %></h2>
+<% for(const recipe in allRecipes) { %>
+    <div class="d-flex justify-content-center flex-column align-items-center">
+        <h2 class="title text-center"><%= recipe %></h2>
+        <div class="text-center">
+          <p><%= allRecipes[recipe].slice(0,100) %>...<a href="/recipe/<%= recipe %>">read more</a></p>
+        </div>
+    </div>  
+<% } %>
+<%- include('partials/footer') %>
+    
